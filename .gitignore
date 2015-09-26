@@ -1,5 +1,5 @@
-build
-.idea
-socceraround.iml
-.gradle
-gradle
+#.idea
+#.gradle
+#build
+#gradle
+#/socceraround.iml
