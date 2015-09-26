@@ -1,8 +1,5 @@
-package com.company;
+package com.company.entities;
 
-/**
- * Created by denis on 9/22/15.
- */
 public class User {
 
     private long id;

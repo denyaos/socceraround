@@ -3,9 +3,6 @@ package com.company;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/**
- * Created by denis on 9/22/15.
- */
 @SpringBootApplication
 public class Application {
 

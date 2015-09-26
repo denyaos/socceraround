@@ -1,0 +1,13 @@
+.title {
+    text-align: center;
+}
+.link {
+    background-color: grey;
+    display: block;
+    border: 1px solid black;
+    color: white;
+}
+
+[body] {
+    background-color: aliceblue;
+}
