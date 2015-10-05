@@ -1,5 +1,11 @@
-.idea
+
+
+#build
+
+#gradle files
 .gradle
-build
 gradle
+
+#idea files
+.idea
 soccerarround.iml
