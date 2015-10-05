@@ -1,4 +1,4 @@
-package com.company.controlers;
+package com.company.controllers;
 
 import com.company.entities.User;
 import com.company.services.UserService;
