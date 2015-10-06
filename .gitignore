@@ -1,5 +1,5 @@
 
-
+#upload only jars
 build/*
 !build/libs
 
