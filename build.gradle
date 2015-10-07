@@ -17,6 +17,7 @@ repositories {
 
 dependencies {
     compile "org.springframework.boot:spring-boot-starter-web:1.2.6.RELEASE"
+    compile "org.springframework.boot:spring-boot-starter-security"
 }
 
 jar {
