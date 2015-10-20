@@ -1,7 +1,6 @@
 
 #upload only jars
-build/*
-!build/libs
+#build/*
 
 #gradle files
 .gradle
