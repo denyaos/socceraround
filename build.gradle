@@ -26,10 +26,14 @@ dependencies {
 }
 
 jar {
-    baseName = 'soccerarround'
-    version =  '0.0.1'
+    baseName 'soccerarround'
+    version '0.0.1'
+    destinationDir project.file('openshift/soccer')
 }
 
 task wrapper(type: Wrapper) {
     gradleVersion = '2.6'
 }
+
+
+
