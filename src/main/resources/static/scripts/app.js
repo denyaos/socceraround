@@ -5,14 +5,15 @@ angular.module('saApp', [])
 
         var ctrl = this;
 
-        $http.get("/user").then(
+
+        $http.get("/player").then(
             function(response) {
                 ctrl.users = response.data;
             }
         );
 
         this.getUser = function(user) {
-            $http.get("/user/" + user.id).then(
+            $http.get("/player/" + user.id).then(
                 function (response) {
                    ctrl.selectedUser = response.data;
                 }
