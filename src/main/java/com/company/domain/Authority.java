@@ -1,12 +1,14 @@
 package com.company.domain;
 
+import org.springframework.security.core.GrantedAuthority;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Authority {
+public class Authority implements GrantedAuthority {
 
     @Id
     @GeneratedValue
@@ -29,5 +31,10 @@ public class Authority {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String getAuthority() {
+        return name;
     }
 }
