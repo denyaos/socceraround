@@ -28,7 +28,7 @@ CREATE TABLE player (
 );
 
 INSERT INTO authority (name) VALUES ('ROLE_ADMIN');
-INSERT INTO authority (name) VALUES ('ROLE_USER');
+INSERT INTO authority (name) VALUES ('ROLE_PLAYER');
 
 INSERT INTO user (username, password, enabled) VALUES ('admin', 'pass', TRUE);
 INSERT INTO user_authority (user_id, authority_id) VALUES (1, 1);

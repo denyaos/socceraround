@@ -6,7 +6,7 @@ angular.module('saApp', [])
         var ctrl = this;
 
 
-        $http.get("/player").then(
+        $http.get("/user/me").then(
             function(response) {
                 ctrl.users = response.data;
             }
@@ -18,6 +18,14 @@ angular.module('saApp', [])
                    ctrl.selectedUser = response.data;
                 }
             );
-        }
+        };
+
+        this.login = function() {
+          $http.post("/login", this.user);
+        };
+
+        this.register = function() {
+            $http.post("/register", this.user);
+        };
 
     });

@@ -14,26 +14,45 @@
         </form>
 
         <div class="content">
-            <span>Choose user from list below:</span>
-            <ul>
-                <li class="listItem"
-                        ng-repeat="user in ctrl.users" ng-click="ctrl.getUser(user)">
-                    {{user.firstName}} {{user.lastName}}
-                </li>
-            </ul>
-
+            <h2>Log in!</h2>
+            <form ng-submit="ctrl.login()">
+                <input type="text" ng-model="ctrl.loginUser.username"/>
+                <input type="password" ng-model="ctrl.loginUser.password"/>
+                <button type="submit">Sign in</button>
+            </form>
         </div>
 
         <div class="content">
-            <span ng-if="ctrl.selectedUser">
-                <p>Selected user:</p>
-                <p>id: {{ctrl.selectedUser.id}}</p>
-                <p>name: {{ctrl.selectedUser.firstName}} {{ctrl.selectedUser.lastName}}</p>
-            </span>
-            <p ng-if="!ctrl.selectedUser">
-                No user selected
-            </p>
+            <h2>Register!</h2>
+            <form ng-submit="ctrl.register()">
+                <input type="text" ng-model="ctrl.registerUser.username"/>
+                <input type="password" ng-model="ctrl.registerUser.password"/>
+                <button type="submit">Sign up</button>
+            </form>
         </div>
+
+
+<!--<div class="content">-->
+            <!--<span>Choose user from list below:</span>-->
+            <!--<ul>-->
+                <!--<li class="listItem"-->
+                        <!--ng-repeat="user in ctrl.users" ng-click="ctrl.getUser(user)">-->
+                    <!--{{user.firstName}} {{user.lastName}}-->
+                <!--</li>-->
+            <!--</ul>-->
+
+        <!--</div>-->
+
+        <!--<div class="content">-->
+            <!--<span ng-if="ctrl.selectedUser">-->
+                <!--<p>Selected user:</p>-->
+                <!--<p>id: {{ctrl.selectedUser.id}}</p>-->
+                <!--<p>name: {{ctrl.selectedUser.firstName}} {{ctrl.selectedUser.lastName}}</p>-->
+            <!--</span>-->
+            <!--<p ng-if="!ctrl.selectedUser">-->
+                <!--No user selected-->
+            <!--</p>-->
+        <!--</div>-->
 
 
 

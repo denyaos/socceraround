@@ -1,6 +1,7 @@
 package com.company.service;
 
 import com.company.domain.Player;
+import com.company.domain.User;
 import com.company.domain.repository.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,4 +21,12 @@ public class PlayerService {
     public List<Player> getAllPlayers() {
         return (List<Player>) playerRepository.findAll();
     }
+
+    public void register(User user) {
+        Player player = new Player();
+        player.setUser(user);
+        playerRepository.save(player);
+    }
+
+
 }
