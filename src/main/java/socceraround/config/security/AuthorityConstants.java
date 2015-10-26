@@ -1,4 +1,4 @@
-package com.company.config.security;
+package socceraround.config.security;
 
 public class AuthorityConstants {
 

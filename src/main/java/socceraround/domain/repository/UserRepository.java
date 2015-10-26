@@ -1,6 +1,6 @@
-package com.company.domain.repository;
+package socceraround.domain.repository;
 
-import com.company.domain.User;
+import socceraround.domain.User;
 import org.springframework.data.repository.CrudRepository;
 
 public interface UserRepository extends CrudRepository<User, Long> {

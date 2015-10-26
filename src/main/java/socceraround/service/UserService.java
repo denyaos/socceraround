@@ -1,11 +1,11 @@
-package com.company.service;
+package socceraround.service;
 
-import com.company.config.security.AuthorityConstants;
-import com.company.domain.Authority;
-import com.company.domain.User;
-import com.company.domain.dto.PlayerRegistrationModel;
-import com.company.domain.repository.AuthorityRepository;
-import com.company.domain.repository.UserRepository;
+import socceraround.config.security.AuthorityConstants;
+import socceraround.domain.Authority;
+import socceraround.domain.User;
+import socceraround.domain.dto.PlayerRegistrationModel;
+import socceraround.domain.repository.AuthorityRepository;
+import socceraround.domain.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

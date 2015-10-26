@@ -1,7 +1,7 @@
-package com.company.config.security;
+package socceraround.config.security;
 
-import com.company.domain.User;
-import com.company.service.UserService;
+import socceraround.domain.User;
+import socceraround.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

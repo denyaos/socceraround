@@ -1,6 +1,4 @@
-package com.company.domain;
-
-import javax.persistence.*;
+package socceraround.domain;
 
 @Entity
 public class Player {

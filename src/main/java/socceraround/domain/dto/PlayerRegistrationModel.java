@@ -1,4 +1,4 @@
-package com.company.domain.dto;
+package socceraround.domain.dto;
 
 public class PlayerRegistrationModel {
 

@@ -1,4 +1,4 @@
-package com.company;
+package socceraround;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

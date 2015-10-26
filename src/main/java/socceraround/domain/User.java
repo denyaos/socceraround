@@ -1,6 +1,5 @@
-package com.company.domain;
+package socceraround.domain;
 
-import javax.persistence.*;
 import java.util.List;
 
 @Entity

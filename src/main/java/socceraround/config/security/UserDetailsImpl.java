@@ -1,4 +1,4 @@
-package com.company.config.security;
+package socceraround.config.security;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;

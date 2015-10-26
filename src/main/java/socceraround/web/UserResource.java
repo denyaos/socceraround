@@ -1,10 +1,10 @@
-package com.company.web;
+package socceraround.web;
 
-import com.company.domain.User;
-import com.company.domain.dto.PlayerRegistrationModel;
-import com.company.domain.repository.UserRepository;
-import com.company.service.PlayerService;
-import com.company.service.UserService;
+import socceraround.domain.User;
+import socceraround.domain.dto.PlayerRegistrationModel;
+import socceraround.domain.repository.UserRepository;
+import socceraround.service.PlayerService;
+import socceraround.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

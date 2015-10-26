@@ -1,8 +1,8 @@
-package com.company.service;
+package socceraround.service;
 
-import com.company.domain.Player;
-import com.company.domain.User;
-import com.company.domain.repository.PlayerRepository;
+import socceraround.domain.Player;
+import socceraround.domain.User;
+import socceraround.domain.repository.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

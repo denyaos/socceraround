@@ -1,4 +1,4 @@
-package com.company.config;
+package socceraround.config;
 
 import org.h2.server.web.WebServlet;
 import org.springframework.boot.context.embedded.ServletRegistrationBean;

@@ -1,8 +1,8 @@
-package com.company.web;
+package socceraround.web;
 
-import com.company.domain.Player;
-import com.company.domain.repository.UserRepository;
-import com.company.service.PlayerService;
+import socceraround.domain.Player;
+import socceraround.domain.repository.UserRepository;
+import socceraround.service.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

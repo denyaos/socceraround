@@ -1,4 +1,4 @@
-package com.company.domain;
+package socceraround.domain;
 
 import org.springframework.security.core.GrantedAuthority;
 
