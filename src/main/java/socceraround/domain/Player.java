@@ -1,5 +1,7 @@
 package socceraround.domain;
 
+import javax.persistence.*;
+
 @Entity
 public class Player {
 

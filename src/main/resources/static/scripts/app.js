@@ -1,31 +1,33 @@
 "use strict";
 
-angular.module('saApp', [])
-    .controller('MainController', function($http) {
+var saApp = angular.module('saApp', []);
 
-        var ctrl = this;
+saApp.controller('MainController', function ($http, $rootScope, AuthService) {
 
+    var ctrl = this;
 
-        $http.get("/user/me").then(
-            function(response) {
-                ctrl.users = response.data;
+    $http.get("/me").then(
+        function (response) {
+            $rootScope.currentUser = response.data;
+        },
+        function (error) {
+            console.log(error);
+        }
+    );
+
+    this.getUser = function (user) {
+        $http.get("/player/" + user.id).then(
+            function (response) {
+                ctrl.selectedUser = response.data;
             }
         );
+    };
 
-        this.getUser = function(user) {
-            $http.get("/player/" + user.id).then(
-                function (response) {
-                   ctrl.selectedUser = response.data;
-                }
-            );
-        };
+    this.login = function () {
+        AuthService.login(this.loginUser);
+    };
 
-        this.login = function() {
-          $http.post("/login", this.user);
-        };
-
-        this.register = function() {
-            $http.post("/register", this.user);
-        };
-
-    });
+    this.register = function () {
+        AuthService.register(this.registerUser);
+    };
+});

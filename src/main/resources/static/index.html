@@ -1,61 +1,66 @@
 <html ng-app="saApp">
-    <head>
-        <title>SoccerArround</title>
-        <link rel="stylesheet" href="styles/main.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-        <script src="scripts/app.js"></script>
-    </head>
+<head>
+    <title>SoccerArround</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/auth.service.js"></script>
+</head>
 
-    <body ng-controller="MainController as ctrl">
-        <h3 class="title">Welcome to SoccerArround app page!!</h3>
+<body ng-controller="MainController as ctrl">
+<h3 class="title">Welcome to SoccerArround app page!!</h3>
 
-        <form class="right" action="/logout" method="post">
-            <input type="submit" value="Sign Out"/>
+<form class="right" action="/logout" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+
+<div ng-if="!currentUser">
+    <div class="content">
+        <h2>Log in!</h2>
+
+        <form ng-submit="ctrl.login()">
+            <input type="text" ng-model="ctrl.loginUser.username"/>
+            <input type="password" ng-model="ctrl.loginUser.password"/>
+            <button type="submit">Sign in</button>
         </form>
+    </div>
 
-        <div class="content">
-            <h2>Log in!</h2>
-            <form ng-submit="ctrl.login()">
-                <input type="text" ng-model="ctrl.loginUser.username"/>
-                <input type="password" ng-model="ctrl.loginUser.password"/>
-                <button type="submit">Sign in</button>
-            </form>
-        </div>
+    <div class="content">
+        <h2>Register!</h2>
 
-        <div class="content">
-            <h2>Register!</h2>
-            <form ng-submit="ctrl.register()">
-                <input type="text" ng-model="ctrl.registerUser.username"/>
-                <input type="password" ng-model="ctrl.registerUser.password"/>
-                <button type="submit">Sign up</button>
-            </form>
-        </div>
+        <form ng-submit="ctrl.register()">
+            <input type="text" ng-model="ctrl.registerUser.username"/>
+            <input type="password" ng-model="ctrl.registerUser.password"/>
+            <button type="submit">Sign up</button>
+        </form>
+    </div>
+</div>
 
+<div ng-if="currentUser">
+    <div class="content">
+        <span>Choose user from list below:</span>
+        <ul>
+            <li class="listItem"
+                ng-repeat="user in ctrl.users" ng-click="ctrl.getUser(user)">
+                {{user.firstName}} {{user.lastName}}
+            </li>
+        </ul>
 
-<!--<div class="content">-->
-            <!--<span>Choose user from list below:</span>-->
-            <!--<ul>-->
-                <!--<li class="listItem"-->
-                        <!--ng-repeat="user in ctrl.users" ng-click="ctrl.getUser(user)">-->
-                    <!--{{user.firstName}} {{user.lastName}}-->
-                <!--</li>-->
-            <!--</ul>-->
+    </div>
 
-        <!--</div>-->
+    <div class="content">
+            <span ng-if="ctrl.selectedUser">
+                <p>Selected user:</p>
+                <p>id: {{ctrl.selectedUser.id}}</p>
+                <p>name: {{ctrl.selectedUser.firstName}} {{ctrl.selectedUser.lastName}}</p>
+            </span>
 
-        <!--<div class="content">-->
-            <!--<span ng-if="ctrl.selectedUser">-->
-                <!--<p>Selected user:</p>-->
-                <!--<p>id: {{ctrl.selectedUser.id}}</p>-->
-                <!--<p>name: {{ctrl.selectedUser.firstName}} {{ctrl.selectedUser.lastName}}</p>-->
-            <!--</span>-->
-            <!--<p ng-if="!ctrl.selectedUser">-->
-                <!--No user selected-->
-            <!--</p>-->
-        <!--</div>-->
+        <p ng-if="!ctrl.selectedUser">
+            No user selected
+        </p>
+    </div>
+</div>
 
 
-
-
-    </body>
+</body>
 </html>
