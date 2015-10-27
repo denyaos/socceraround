@@ -1,41 +1,41 @@
-.title {
-    text-align: center;
-}
-.link {
-    background-color: grey;
-    display: block;
-    border: 1px solid black;
-    color: white;
-}
+/*.title {*/
+    /*text-align: center;*/
+/*}*/
+/*.link {*/
+    /*background-color: grey;*/
+    /*display: block;*/
+    /*border: 1px solid black;*/
+    /*color: white;*/
+/*}*/
 
-body {
-    color: aliceblue;
-    background-image: url('/images/field.png');
-    background-repeat: no-repeat;
-    background-size: 100% 500px;
-    background-color: black;
-    background-attachment: fixed;
-    background-position: bottom;
-}
+/*body {*/
+    /*color: aliceblue;*/
+    /*background-image: url('/images/field.png');*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: 100% 500px;*/
+    /*background-color: black;*/
+    /*background-attachment: fixed;*/
+    /*background-position: bottom;*/
+/*}*/
 
-.right {
-    float:right
-}
+/*.right {*/
+    /*float:right*/
+/*}*/
 
-.content {
-    background-color: rgba(255, 255, 255, 0.2);
-    float: left;
-    width: 40%;
-    padding: 3%;
-    margin: 2%;
-    border-radius: 2px;
-}
+/*.content {*/
+    /*background-color: rgba(255, 255, 255, 0.2);*/
+    /*float: left;*/
+    /*width: 40%;*/
+    /*padding: 3%;*/
+    /*margin: 2%;*/
+    /*border-radius: 2px;*/
+/*}*/
 
-.listItem {
-    cursor: pointer;
-    margin: 5px;
-}
+/*.listItem {*/
+    /*cursor: pointer;*/
+    /*margin: 5px;*/
+/*}*/
 
-.listItem:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
+/*.listItem:hover {*/
+    /*background-color: rgba(255, 255, 255, 0.1);*/
+/*}*/

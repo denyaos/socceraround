@@ -1,0 +1,10 @@
+{
+  "name": "soccerarround",
+  "version": "0.0.0",
+  "homepage": "https://github.com/denyaos/soccerarround",
+  "authors": [
+    "denis.solohub <dsolohub@grossum.com>"
+  ],
+  "license": "MIT",
+  "private": true
+}
