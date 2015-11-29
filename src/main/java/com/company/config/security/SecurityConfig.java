@@ -17,16 +17,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        //todo: add password encoder
         auth.userDetailsService(userDetailsService);
     }
 
+    @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
                     .antMatchers("/", "/scripts/**", "/styles/**", "/images/**").permitAll()
                     .antMatchers("/register").anonymous()
-                    .antMatchers("/console/**").permitAll().and()
-                .authorizeRequests()
+                    .antMatchers("/console/**").permitAll()
                     .anyRequest().authenticated().and()
                     .formLogin().and()
                     .logout().permitAll().and()
