@@ -19,21 +19,11 @@ import javax.transaction.Transactional;
 @RestController
 public class UserResource {
 
-    @Autowired
-    private PlayerService playerService;
-
-    @Autowired
-    private UserService userService;
-
-    @Autowired
     private UserRepository userRepository;
 
-    @Transactional
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public ResponseEntity register(PlayerRegistrationModel model) {
-        User user = userService.registerUser(model);
-        playerService.register(user);
-        return new ResponseEntity(HttpStatus.OK);
+    @Autowired
+    public UserResource(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     @RequestMapping(value = "/me", method = RequestMethod.GET)

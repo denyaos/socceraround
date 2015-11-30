@@ -18,9 +18,6 @@ public class PlayerResource {
     @Autowired
     private PlayerService playerService;
 
-    @Autowired
-    private UserRepository userRepository;
-
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Player getUserById(@PathVariable("id") long id) {
         return playerService.getPlayerById(id);

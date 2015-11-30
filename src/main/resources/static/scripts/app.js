@@ -2,20 +2,18 @@
 
 var saApp = angular.module('saApp', []);
 
-saApp.controller('MainController', function ($http, $rootScope, AuthService) {
-
-    var ctrl = this;
+saApp.controller('MainController', function ($http, $scope, $rootScope, AuthService) {
 
     $http.get("/me").then(
         function (response) {
-            $rootScope.currentUser = response.data;
+            $rootScope.account = response.data;
         },
         function (error) {
             console.log(error);
         }
     );
 
-    this.getUser = function (user) {
+    $scope.getUser = function (user) {
         $http.get("/player/" + user.id).then(
             function (response) {
                 ctrl.selectedUser = response.data;
@@ -23,11 +21,11 @@ saApp.controller('MainController', function ($http, $rootScope, AuthService) {
         );
     };
 
-    this.login = function () {
+    $scope.login = function () {
         AuthService.login(this.loginUser);
     };
 
-    this.register = function () {
+    $scope.register = function () {
         AuthService.register(this.registerUser);
     };
 });

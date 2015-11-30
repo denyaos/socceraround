@@ -15,11 +15,15 @@ import java.util.Arrays;
 @Service
 public class UserService {
 
-    @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
+    private AuthorityRepository authorityRepository;
 
     @Autowired
-    AuthorityRepository authorityRepository;
+    public UserService(UserRepository userRepository,
+                       AuthorityRepository authorityRepository) {
+        this.userRepository = userRepository;
+        this.authorityRepository = authorityRepository;
+    }
 
     @Transactional
     public User findUserWithAuthorities(String username) {

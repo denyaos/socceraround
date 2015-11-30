@@ -1,53 +1,50 @@
 <html ng-app="saApp">
 <head>
-    <title>SoccerArround</title>
+    <title>SoccerAround</title>
     <link rel="stylesheet" href="styles/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/auth.service.js"></script>
 </head>
 
-<body ng-controller="MainController as ctrl">
-<h3 class="title">Welcome to SoccerArround app page!!</h3>
+<body ng-controller="MainController">
+<h3 class="title">SoccerAround</h3>
 
-<form class="right" action="/logout" method="post">
-    <input type="submit" value="Sign Out"/>
-</form>
+<div class="right" ng-if="account">
+    <form action="/logout" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
+</div>
 
-<div ng-if="!currentUser">
+
+<div ng-if="!account">
     <div class="content">
         <h2>Log in!</h2>
 
-        <form ng-submit="ctrl.login()">ajax
-            <input type="text" ng-model="ctrl.loginUser.username"/>
-            <input type="password" ng-model="ctrl.loginUser.password"/>
+        <form ng-submit="login()">
+            <input type="text" ng-model="loginUser.username"/>
+            <input type="password" ng-model="loginUser.password"/>
             <button type="submit">Sign in</button>
         </form>
-
-        <!--<form method="POST" action="/login">http-->
-            <!--<input type="text" name="username"/>-->
-            <!--<input type="password" name="password"/>-->
-            <!--<button type="submit">Sign in</button>-->
-        <!--</form>-->
     </div>
 
     <div class="content">
         <h2>Register!</h2>
 
-        <form ng-submit="ctrl.register()">
-            <input type="text" ng-model="ctrl.registerUser.username"/>
-            <input type="password" ng-model="ctrl.registerUser.password"/>
+        <form ng-submit="register()">
+            <input type="text" ng-model="registerUser.username"/>
+            <input type="password" ng-model="registerUser.password"/>
             <button type="submit">Sign up</button>
         </form>
     </div>
 </div>
 
-<div ng-if="currentUser">
+<div ng-if="account">
     <div class="content">
         <span>Choose user from list below:</span>
         <ul>
             <li class="listItem"
-                ng-repeat="user in ctrl.users" ng-click="ctrl.getUser(user)">
+                ng-repeat="user in users" ng-click="getUser(user)">
                 {{user.firstName}} {{user.lastName}}
             </li>
         </ul>
@@ -55,13 +52,13 @@
     </div>
 
     <div class="content">
-            <span ng-if="ctrl.selectedUser">
+            <span ng-if="selectedUser">
                 <p>Selected user:</p>
-                <p>id: {{ctrl.selectedUser.id}}</p>
-                <p>name: {{ctrl.selectedUser.firstName}} {{ctrl.selectedUser.lastName}}</p>
+                <p>id: {{selectedUser.id}}</p>
+                <p>name: {{selectedUser.firstName}} {{selectedUser.lastName}}</p>
             </span>
 
-        <p ng-if="!ctrl.selectedUser">
+        <p ng-if="!selectedUser">
             No user selected
         </p>
     </div>
