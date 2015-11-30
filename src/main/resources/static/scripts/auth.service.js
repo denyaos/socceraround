@@ -31,20 +31,30 @@ saApp.factory('AuthService', function ($http) {
            $http({
                method: 'POST',
                url: '/login',
-               data: credentials,
+               data: processParams(credentials),
                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-           }).then(
-               function(){
-                   this.credentials = credentials;
-               },function(error){
-                   console.log(error);
-               }
-
-           );
+           });
+           // .then(
+           //    function(){
+           //        this.credentials = credentials;
+           //    },function(error){
+           //        console.log(error);
+           //    }
+           //
+           //);
         },
 
         register: function(user) {
             $http.post("/register", user);
         }
+
+
     };
+    function processParams(credentials) {
+        var result = '';
+        angular.forEach(credentials, function(value, key) {
+            result += key + '=' + encodeURIComponent(value) + '&'
+        });
+        return result.length ? result.substr(0, result.length - 1): result;
+    }
 });
