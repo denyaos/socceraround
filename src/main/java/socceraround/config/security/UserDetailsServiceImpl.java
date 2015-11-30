@@ -22,6 +22,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         if (user == null)
             throw new UsernameNotFoundException("No user found with username " + username);
 
+        //todo: use spring's user to get rid of UserDetailsImpl
         return new UserDetailsImpl(user.getUsername(), user.getPassword(), user.getAuthorities());
     }
 }

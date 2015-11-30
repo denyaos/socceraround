@@ -11,8 +11,12 @@ import java.util.List;
 @Service
 public class PlayerService {
 
+    private PlayerRepository playerRepository;
+
     @Autowired
-    PlayerRepository playerRepository;
+    public PlayerService(PlayerRepository playerRepository) {
+        this.playerRepository = playerRepository;
+    }
 
     public Player getPlayerById(long id) {
         return playerRepository.findOne(id);
