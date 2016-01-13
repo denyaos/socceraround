@@ -30,10 +30,33 @@ CREATE TABLE player (
 CREATE TABLE friendship (
   player_id BIGINT NOT NULL,
   friend_id BIGINT NOT NULL,
-  status INTEGER,
+  status INTEGER NOT NULL,
   PRIMARY KEY (player_id, friend_id),
   FOREIGN KEY (player_id) REFERENCES player (id),
   FOREIGN KEY (friend_id) REFERENCES player (id)
+);
+
+CREATE TABLE place (
+  id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255),
+  coordinates VARCHAR(255)
+);
+
+CREATE TABLE `match` (
+  id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  creator_id BIGINT NOT NULL,
+  place_id BIGINT,
+  FOREIGN KEY (creator_id) REFERENCES player (id),
+  FOREIGN KEY (place_id) REFERENCES place (id)
+);
+
+CREATE TABLE match_invitation (
+  match_id BIGINT NOT NULL,
+  player_id BIGINT NOT NULL,
+  status INTEGER NOT NULL,
+  PRIMARY KEY (match_id, player_id),
+  FOREIGN KEY (match_id) REFERENCES `match` (id),
+  FOREIGN KEY (player_id) REFERENCES player (id)
 );
 
 INSERT INTO authority (name) VALUES ('ROLE_ADMIN');
