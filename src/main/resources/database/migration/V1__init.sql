@@ -27,6 +27,15 @@ CREATE TABLE player (
   FOREIGN KEY (user_id) REFERENCES user (id)
 );
 
+CREATE TABLE friendship (
+  player_id BIGINT NOT NULL,
+  friend_id BIGINT NOT NULL,
+  status INTEGER,
+  PRIMARY KEY (player_id, friend_id),
+  FOREIGN KEY (player_id) REFERENCES player (id),
+  FOREIGN KEY (friend_id) REFERENCES player (id)
+);
+
 INSERT INTO authority (name) VALUES ('ROLE_ADMIN');
 INSERT INTO authority (name) VALUES ('ROLE_PLAYER');
 

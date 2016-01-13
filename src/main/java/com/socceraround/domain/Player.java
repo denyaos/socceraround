@@ -1,13 +1,11 @@
 package com.socceraround.domain;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
-public class Player {
-
-    @Id
-    @GeneratedValue
-    private long id;
+public class Player extends SAEntity {
 
     private String firstName;
 
@@ -18,14 +16,6 @@ public class Player {
     @OneToOne
     @JoinColumn(name = "user_id")
     private User user;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getFirstName() {
         return firstName;

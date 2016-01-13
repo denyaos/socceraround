@@ -4,11 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class User {
-
-    @Id
-    @GeneratedValue
-    private long id;
+public class User extends SAEntity {
 
     @Column(nullable = false)
     private String username;
@@ -26,14 +22,6 @@ public class User {
             inverseJoinColumns = {@JoinColumn(name = "authority_id", referencedColumnName = "id")}
     )
     private List<Authority> authorities;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getUsername() {
         return username;
