@@ -4,7 +4,7 @@ saApp.config(function ($stateProvider) {
             parent: 'authorized',
             url: '/profile',
             views: {
-                "content@": { templateUrl: "scripts/states/base.html" }
+                "content@": { templateUrl: "scripts/states/authorized/base.html" }
             }
         })
 });

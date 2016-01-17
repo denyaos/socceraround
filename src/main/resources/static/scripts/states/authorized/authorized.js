@@ -3,7 +3,7 @@ saApp.config(function ($stateProvider) {
         .state('authorized', {
             abstract: true,
             views: {
-                "navigation": { templateUrl: "scripts/states/navigation.html" }
+                "navigation": { templateUrl: "scripts/states/authorized/navigation.html" }
             }
         })
 });

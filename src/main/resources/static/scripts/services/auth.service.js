@@ -1,16 +1,21 @@
 "use strict";
 
-saApp.factory('AuthService', function ($http, $rootScope) {
+saApp.factory('AuthService', function ($http, $rootScope, $q) {
     return {
         login: function(credentials) {
-           $http({
-               method: 'POST',
-               url: '/login',
-               data: transformFormToParams(credentials),
-               headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-           }).then(function(){
-               $rootScope.account = angular.copy(credentials);
-           });
+            var deferred = $q.defer();
+            $http({
+                method: 'POST',
+                url: '/login',
+                data: transformFormToParams(credentials),
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+            }).then(function(){
+                $rootScope.account = angular.copy(credentials);
+                deferred.resolve();
+            }, function(){
+                deferred.reject();
+            });
+            return deferred.promise;
         },
 
         register: function(user) {
