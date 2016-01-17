@@ -1,28 +1,35 @@
 package com.socceraround.domain;
 
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 
 @Entity
-public class MatchInvitation extends SAEntity {
+public class MatchInvitation {
 
-    //todo: needs to create composite primary key here
+    @EmbeddedId
+    private MatchInvitationId id;
 
-    private Match match;
-    private Player player;
+    @Column(nullable = false)
+    private MatchInvitationStatus status;
 
-    public Match getMatch() {
-        return match;
+    public MatchInvitationId getId() {
+        return id;
     }
 
-    public void setMatch(Match match) {
-        this.match = match;
+    public void setId(MatchInvitationId id) {
+        this.id = id;
     }
 
-    public Player getPlayer() {
-        return player;
+    public MatchInvitationStatus getStatus() {
+        return status;
     }
 
-    public void setPlayer(Player player) {
-        this.player = player;
+    public void setStatus(MatchInvitationStatus status) {
+        this.status = status;
+    }
+
+    enum MatchInvitationStatus {
+        PENDING, ACCEPTED, REJECTED
     }
 }

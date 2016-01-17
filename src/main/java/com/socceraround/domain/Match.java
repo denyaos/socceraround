@@ -16,7 +16,7 @@ public class Match extends SAEntity {
     private Place place;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "player_id")
+    @JoinColumn(name = "creator_id")
     private Player creator;
 
     public Date getDate() {

@@ -12,3 +12,5 @@ socceraround.iml
 #bower components
 src/main/resources/static/bower_components
 
+#openshift
+openshift

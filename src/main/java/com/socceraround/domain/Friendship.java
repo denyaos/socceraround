@@ -3,7 +3,6 @@ package com.socceraround.domain;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.Enumerated;
 
 @Entity
 public class Friendship {
@@ -12,8 +11,15 @@ public class Friendship {
     private FriendshipPK id;
 
     @Column(nullable = false)
-    @Enumerated
     private FriendshipStatus status;
+
+    public FriendshipPK getId() {
+        return id;
+    }
+
+    public void setId(FriendshipPK id) {
+        this.id = id;
+    }
 
     public FriendshipStatus getStatus() {
         return status;

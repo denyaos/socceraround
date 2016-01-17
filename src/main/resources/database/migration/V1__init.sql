@@ -44,6 +44,7 @@ CREATE TABLE place (
 
 CREATE TABLE `match` (
   id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  date TIMESTAMP,
   creator_id BIGINT NOT NULL,
   place_id BIGINT,
   FOREIGN KEY (creator_id) REFERENCES player (id),
