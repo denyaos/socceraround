@@ -10,15 +10,18 @@
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 
     <script src="scripts/app.js"></script>
-    <script src="scripts/states/authorized/base.js"></script>
+    <script src="scripts/constants.js"></script>
     <script src="scripts/states/authorized/authorized.js"></script>
-    <script src="scripts/states/welcome/welcome.js"></script>
+    <script src="scripts/states/authorized/history/history.js"></script>
+    <script src="scripts/states/authorized/navigation/navigation.controller.js"></script>
     <script src="scripts/states/welcome/welcome.controller.js"></script>
+    <script src="scripts/states/welcome/welcome.js"></script>
+    <script src="scripts/services/rest/authentication.client.js"></script>
     <script src="scripts/services/auth.service.js"></script>
+    <script src="scripts/services/principal.service.js"></script>
 </head>
 
 <body class="sa">
-    <div ui-view="navigation"></div>
-    <div ui-view="content"></div>
+    <div ui-view></div>
 </body>
 </html>

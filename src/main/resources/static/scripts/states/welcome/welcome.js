@@ -1,12 +1,11 @@
-saApp.config(function ($stateProvider) {
+saApp.config(function ($stateProvider, ROLES) {
     $stateProvider
         .state('welcome', {
             url:'/',
-            views: {
-                "content": {
-                    templateUrl: "scripts/states/welcome/welcome.html",
-                    controller: 'welcomeCtrl'
-                }
-            }
+            data : {
+                role: ROLES.ANONYMOUS
+            },
+            templateUrl: "scripts/states/welcome/welcome.html",
+            controller: 'welcomeCtrl'
         })
 });
