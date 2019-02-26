@@ -11,6 +11,10 @@ apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
 
+plugins {
+    id 'com.craigburke.client-dependencies' version '1.4.1'
+}
+
 repositories {
     mavenCentral()
 }
