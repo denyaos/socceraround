@@ -1,31 +1,21 @@
 "use strict";
 
-var saApp = angular.module('saApp', []);
+var saApp = angular.module('saApp', ['ui.router']);
 
-saApp.controller('MainController', function ($http, $scope, $rootScope, AuthService) {
+saApp.config(function($stateProvider, $urlRouterProvider) {
 
-    $http.get("/me").then(
-        function (response) {
-            $rootScope.account = response.data;
-        },
-        function (error) {
-            console.log(error);
+    $urlRouterProvider.otherwise("/");
+
+
+});
+
+saApp.run(function($rootScope, $http, $state, AuthService){
+
+    $rootScope.$on('$stateChangeStart',
+        function(event, toState, toParams, fromState, fromParams){
+            AuthService.authorizeState(toState);
         }
     );
 
-    $scope.getUser = function (user) {
-        $http.get("/player/" + user.id).then(
-            function (response) {
-                ctrl.selectedUser = response.data;
-            }
-        );
-    };
 
-    $scope.login = function () {
-        AuthService.login(this.loginUser);
-    };
-
-    $scope.register = function () {
-        AuthService.register(this.registerUser);
-    };
 });

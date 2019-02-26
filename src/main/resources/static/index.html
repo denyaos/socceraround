@@ -1,69 +1,27 @@
 <html ng-app="saApp">
 <head>
-    <title>SoccerAround</title>
+    <title>Let's run!</title>
+
+    <link rel="stylesheet" href="styles/flatly/bootstrap.css">
+    <link rel="stylesheet" href="styles/flatly/custom.css">
     <link rel="stylesheet" href="styles/main.css">
-    <script src="/bower_components/angular/angular.js"></script>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
     <script src="scripts/app.js"></script>
-    <script src="scripts/auth.service.js"></script>
+    <script src="scripts/constants.js"></script>
+    <script src="scripts/states/authorized/authorized.js"></script>
+    <script src="scripts/states/authorized/history/history.js"></script>
+    <script src="scripts/states/authorized/navigation/navigation.controller.js"></script>
+    <script src="scripts/states/welcome/welcome.controller.js"></script>
+    <script src="scripts/states/welcome/welcome.js"></script>
+    <script src="scripts/services/rest/authentication.client.js"></script>
+    <script src="scripts/services/auth.service.js"></script>
+    <script src="scripts/services/principal.service.js"></script>
 </head>
 
-<body ng-controller="MainController">
-<h3 class="title">SoccerAround</h3>
-
-<div class="right" ng-if="account">
-    <form action="/logout" method="post">
-        <input type="submit" value="Sign Out"/>
-    </form>
-</div>
-
-
-<div ng-if="!account">
-    <div class="content">
-        <h2>Log in!</h2>
-
-        <form ng-submit="login()">
-            <input type="text" ng-model="loginUser.username"/>
-            <input type="password" ng-model="loginUser.password"/>
-            <button type="submit">Sign in</button>
-        </form>
-    </div>
-
-    <div class="content">
-        <h2>Register!</h2>
-
-        <form ng-submit="register()">
-            <input type="text" ng-model="registerUser.username"/>
-            <input type="password" ng-model="registerUser.password"/>
-            <button type="submit">Sign up</button>
-        </form>
-    </div>
-</div>
-
-<div ng-if="account">
-    <div class="content">
-        <span>Choose user from list below:</span>
-        <ul>
-            <li class="listItem"
-                ng-repeat="user in users" ng-click="getUser(user)">
-                {{user.firstName}} {{user.lastName}}
-            </li>
-        </ul>
-
-    </div>
-
-    <div class="content">
-            <span ng-if="selectedUser">
-                <p>Selected user:</p>
-                <p>id: {{selectedUser.id}}</p>
-                <p>name: {{selectedUser.firstName}} {{selectedUser.lastName}}</p>
-            </span>
-
-        <p ng-if="!selectedUser">
-            No user selected
-        </p>
-    </div>
-</div>
-
-
+<body class="sa">
+    <div ui-view></div>
 </body>
 </html>
