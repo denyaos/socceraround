@@ -30,11 +30,11 @@ dependencies {
 }
 
 clientDependencies {
-    installDir = 'src/main/resources/static/bower_components'
+    installDir = 'src/main/resources/static/libs/'
     npm {
         'angular'('1.4.8')
         'angular-ui-router'('0.2.15')
-        'angular-bootstrap'('1.0.3')
+        'angular-bootstrap'('0.12.2')
     }
 }
 
