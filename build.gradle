@@ -30,7 +30,7 @@ dependencies {
 }
 
 clientDependencies {
-    installDir = 'src/main/resources/static/libs/'
+    installDir = 'src/main/resources/static/'
     npm {
         'angular'('1.4.8')
         'angular-ui-router'('0.2.15')
