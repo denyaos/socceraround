@@ -38,7 +38,10 @@ clientDependencies {
     }
 }
 
+
+
 jar {
+    dependsOn clientInstall
     baseName 'soccerarround'
     version '0.0.1'
     destinationDir project.file('openshift/soccer')
@@ -47,6 +50,7 @@ jar {
 task wrapper(type: Wrapper) {
     gradleVersion = '2.6'
 }
+
 
 
 
