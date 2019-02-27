@@ -36,7 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         web.
                 ignoring()
                 .antMatchers(
-                        "/bower_components/**",
+                        "/vendor/**",
                         "/scripts/**",
                         "/styles/**",
                         "/images/**",
