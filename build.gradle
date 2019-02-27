@@ -38,10 +38,8 @@ clientDependencies {
     }
 }
 
-
-
 jar {
-    dependsOn clientInstall
+    dependsOn clientRefresh
     baseName 'soccerarround'
     version '0.0.1'
     destinationDir project.file('openshift/soccer')
