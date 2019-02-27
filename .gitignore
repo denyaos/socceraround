@@ -10,7 +10,4 @@ gradle
 socceraround.iml
 
 #bower components
-src/main/resources/static/bower_components
-
-#openshift
-openshift
+src/main/resources/static/libs

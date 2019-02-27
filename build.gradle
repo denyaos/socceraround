@@ -38,11 +38,14 @@ clientDependencies {
     }
 }
 
-jar {
+processResources {
     dependsOn clientRefresh
+}
+
+jar {
     baseName 'soccerarround'
     version '0.0.1'
-    destinationDir project.file('openshift/soccer')
+  //  destinationDir project.file('openshift/soccer')
 }
 
 task wrapper(type: Wrapper) {
