@@ -23,14 +23,14 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-security"
     compile "org.springframework.boot:spring-boot-starter-test"
 
-//  db dependencies
+	//db dependencies
     compile "org.springframework.boot:spring-boot-starter-data-jpa"
     compile "com.h2database:h2"
     compile "org.flywaydb:flyway-core"
 }
 
 clientDependencies {
-    installDir = 'src/main/resources/static/'
+    installDir = 'src/main/resources/static/vendor/'
     npm {
         'angular'('1.4.8')
         'angular-ui-router'('0.2.15')
@@ -45,7 +45,7 @@ processResources {
 jar {
     baseName 'soccerarround'
     version '0.0.1'
-  //  destinationDir project.file('openshift/soccer')
+    destinationDir project.file('build/dist')
 }
 
 task wrapper(type: Wrapper) {

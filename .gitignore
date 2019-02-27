@@ -10,4 +10,4 @@ gradle
 socceraround.iml
 
 #bower components
-src/main/resources/static/libs
+src/main/resources/static/vendor
